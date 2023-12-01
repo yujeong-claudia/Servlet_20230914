@@ -25,7 +25,7 @@ public class PostMethodQuiz09 extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.print("<html><head><title>입사지원서</title></head><body>");
 		out.print("<b>" + name + "</b>" + "님 지원이 완료되었습니다.");
-		out.print("<h3>지원 내용</h3");
+		out.print("<h3>지원 내용</h3>");
 		out.print(introduction);
 		out.print("</body></html>");
 		

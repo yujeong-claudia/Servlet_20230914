@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/lesson01/quiz08")
 public class GetMethodQuiz08 extends HttpServlet {
+	//테스트 주석 추가
 
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -35,10 +36,19 @@ public class GetMethodQuiz08 extends HttpServlet {
 		Iterator<String> iter = list.iterator();
 		while (iter.hasNext()) {
 			String line = iter.next();
+			
+			//1번째 방식
+//			if (line.contains(search)) {
+//				String[] words = line.split(search); // 0:앞문장, 1:뒷문장
+//				out.print(words[0] + "<b>" + search + "</b>" + words[1] + "<br>");
+//			}
+			
+			//2번째 방식
 			if (line.contains(search)) {
 				line = line.replace(search, "<b>" + search + "</b>");
 				out.print(line + "<br>");
 			}
+			
 		}
 
 	}
