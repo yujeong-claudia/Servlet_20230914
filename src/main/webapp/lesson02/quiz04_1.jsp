@@ -8,18 +8,44 @@
 </head>
 <body>
 	<%
-	int in = Integer.valueOf(request.getParameter("in"));
-	int yd = Integer.valueOf(request.getParameter("yd"));
-	int ft = Integer.valueOf(request.getParameter("ft"));
-	int m = Integer.valueOf(request.getParameter("m"));
+	int number = Integer.valueOf(request.getParameter("number"));
 	String[] lengthArr = request.getParameterValues("length");
 	
 	%>
+	
+	<%
+	String result = "";
+	if (result != null) {
+		for (String length : lengthArr) {
+			if (length.equals("in")) {
+				double in = number / 2.54;
+				result += in + "in"+ "<br>";
+			}
+			if (length.equals("yd")) {
+				double yd = number / 91.44;
+				result += yd + "yd" + "<br>";
+			}
+			if (length.equals("ft")) {
+				double ft = number / 30.48;
+				result += ft + "ft" + "<br>";
+			}
+			if (length.equals("m")) {
+				double m = number / 100.0;	
+				result += m + "m" + "<br>";
+			}
+			
+		}
+	}
+	
+	
+	%>
+	
 	<div class="container">
-		<h1>길이 변환 결과</h1>
-		
+		<h2>길이 변환 결과</h2>
+		<b><%= number %>cm</b>
 		<hr>
-		
+		<b> <%= result %></b>
+		<br>
 	</div>
 	
 </body>

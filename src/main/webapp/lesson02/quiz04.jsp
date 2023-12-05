@@ -20,13 +20,13 @@
 			
 			<div class="mt-2">  
 				<label for="in">인치</label>
-				<input type="checkbox" id="in" name="length" value="인치">
+				<input type="checkbox" id="in" name="length" value="in">
 				<label for="yd">야드</label>
-				<input type="checkbox" id="yd" name="length" value="야드">
+				<input type="checkbox" id="yd" name="length" value="yd">
 				<label for="ft">피트</label>
-				<input type="checkbox" id="ft" name="length" value="피트">
+				<input type="checkbox" id="ft" name="length" value="ft">
 				<label for="m">미터</label>
-				<input type="checkbox" id="m" name="length" value="미터">
+				<input type="checkbox" id="m" name="length" value="m">
 				<br>
 				<input type="submit" value="변환하기" class="form-control btn btn-success col-2">
 			</div>
