@@ -12,18 +12,16 @@
 <body>
 	<div class="container">
 		<h1>메뉴 검색</h1>
-		<form method="get" action="/less02/quiz06_1.jsp">
-			<div class="d-flex justify-content-center">
-				<input type="text" class="form-control col-3 ml-3" name="keyword">
+		<form method="get" action="/lesson02/quiz06_1.jsp">
+			<div class="d-flex align-items-center">
+				<input type="text" class="form-control col-3 mr-3" name="keyword">
 				<label>
-				<input type="checkbox" name="starPointFilter" value="true">
-				 4점이하 제외
+					<input type="checkbox" name="starPointFilter" value="true">
+					 4점이하 제외
 				</label>	
 			</div>
-			<input type="submit" value="검색" class="btn btn-success mt-3"></button>
-			<div>
-				<input type="checkbox" name="버거킹", "menu"="햄버거", "point":4.3>
-			</div>
+			
+			<input type="submit" value="검색" class="btn btn-success mt-3">
 			
 		</form>
 	</div>
