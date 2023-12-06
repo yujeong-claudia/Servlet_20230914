@@ -35,6 +35,7 @@
 		//out.print(keyword);
 		String starPointFilter = request.getParameter("starPointFilter");
 		//out.print(starPointFilter); // null  or "true"
+		boolean exclude = starPointFilter != null; 
 	%>
 
 	<div class="container">
@@ -52,9 +53,10 @@
 			<%
 				for (Map<String, Object> item : list) {    // map1 | map2 | map3....
 					if (keyword.equals(item.get("menu"))) {
-						//if(item.get("point") >= 4.0) {
-							//continue;
-						//}
+						// skip 조건: 체크가 되어있고 스킵 되어야 하는 조건이면 continue로 넘김
+						if(exclude && (double)item.get("point") <= 4) {
+							continue; // 아래 코드 수행하지않고 넘김
+						}
 			%>
 				<tr>
 					<td><%= item.get("menu") %></td>
