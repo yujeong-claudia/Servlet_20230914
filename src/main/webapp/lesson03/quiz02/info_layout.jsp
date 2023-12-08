@@ -1,11 +1,11 @@
 <%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>레이아웃 - 전체 페이지</title>
+<title>멜롱 - 아이유 앨범</title>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
 	integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
@@ -19,30 +19,24 @@
 	integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
 	crossorigin="anonymous"></script>
 <style>
-header {height: 80px;}
-
-nav {height: 50px}
-
-.content {min-height: 500px;}
-
-footer {height: 50px}
+	header {height:100px;}
+	.content {min-height:500px;}
+	footer {height:80px;}
 </style>
-
 </head>
 <body>
 
-
 	<div id="wrap" class="container">
-		<header class="d-flex align-items-center justify-content-center">
+		<header class="d-flex align-items-center">
 			<jsp:include page="header.jsp" />
 		</header>
-		<nav class="bg-danger d-flex align-items-center">
-			<jsp:include page="nav.jsp" />
+		<nav>
+			<jsp:include page="menu.jsp" />
 		</nav>
-		<section class="content">
-			<jsp:include page="content.jsp" />
+		<section class="content py-4">
+			<jsp:include page="info.jsp" />
 		</section>
-		<footer class="d-flex align-items-center justify-content-center">
+		<footer>
 			<jsp:include page="footer.jsp" />
 		</footer>
 	</div>

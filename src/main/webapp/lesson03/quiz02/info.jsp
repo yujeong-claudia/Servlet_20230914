@@ -1,33 +1,7 @@
 <%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>레이아웃2</title>
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-	integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
-	crossorigin="anonymous">
-<script
-	src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-	crossorigin="anonymous"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-	crossorigin="anonymous"></script>
+	pageEncoding="UTF-8"%>
 	
-<style>
-	wrap {height: 1000px;}
-	header {height: 100px;}
-	nav {height: 50px;}
-	.content {height: 500px;}
-	footer {height: 80px;}
-</style>
-</head>
-<body>
 <%
 // 아티스트 정보 
 
@@ -107,38 +81,46 @@
     musicInfo.put("lyricist", "아이유");
     musicList.add(musicInfo);
 %>
-	<div id="wrap" class="container">
-		<header class="bg-dark d-flex align-items-center">
-			<div class="col-2">
-				<h3><a href="#" class="text-success">Melong</a></h3>
-			</div>
-			<div class="col-10">
-				<div class="input-group">
-					<input type="text" class="form-control col-6" name="search">
-					<div class="input-group-append">
-						<input type="submit" class="btn btn-info" value="검색">
-					</div>
+
+<%
+	//request 
+%>
+	
+<%-- 곡 정보 --%>
+<h4>곡 목록</h4>
+<div class="d-flex border border-success p-3 mb-3">
+	<div class="mr-4">
+		<img src="<%=musicInfo.get("thumbnail")%>" alt="가수 이미지" width="150">
+	</div>	
+	<div>
+		<h3><%=musicInfo.get("title")%></h3>
+		<div class="font-weight-bold text-success"><%=musicInfo.get("singer")%></div>
+		<div>
+			<div>
+				<div class="d-flex">
+					<div class="mr-5">앨범</div>
+					<div><%= musicInfo.get("album") %></div>
+				</div>
+				<div class="d-flex">
+					<div class="mr-5">재생시간</div>
+					<div><%= musicInfo.get("time") %></div>
+				</div>
+				<div class="d-flex">
+					<div class="mr-5">작곡가</div>
+					<div><%= musicInfo.get("composer") %></div>
+				</div>
+				<div class="d-flex">
+					<div class="mr-5">작사가</div>
+					<div><%= musicInfo.get("lyricist") %></div>
 				</div>
 			</div>
-		</header>
-		<nav>
-			<ul class="nav bg-warning">
-				<li class="nav-item"><a href="#" class="nav-link text-dark font-weight-bold">멜롱차트</a></li>
-				<li class="nav-item"><a href="#" class="nav-link text-dark font-weight-bold">최신음악</a></li>
-				<li class="nav-item"><a href="#" class="nav-link text-dark font-weight-bold">장르음악</a></li>
-				<li class="nav-item"><a href="#" class="nav-link text-dark font-weight-bold">멜롱DJ</a></li>
-				<li class="nav-item"><a href="#" class="nav-link text-dark font-weight-bold">뮤직어워드</a></li>
-			</ul>
-		</nav>
-		<section>
-			<h4>가사</h4>
-			<hr>
-			가사 정보 없음
-		</section>
-		<footer>
-			<hr>
-			<small class="text-secondary">Copyright 2023. melong All Rights Reserved.</small>
-		</footer>
+		</div>
 	</div>
-</body>
-</html>
+</div>	
+
+<%-- 가사 정보 영역 --%>
+<div>
+	<h4>가사</h4>
+	<hr>
+	가사 정보 없음
+</div>

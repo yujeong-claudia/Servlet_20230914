@@ -1,7 +1,6 @@
 <%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<section class="content">
 <%
 	List<Map<String, String>> list = new ArrayList<>();
 	Map<String, String> map = new HashMap<String, String>() {
@@ -137,11 +136,6 @@
 	};
 	list.add(map);
 	%>
-<%
-	String ch = request.getParameter("ch");
-	String name = request.getParameter("name");
-	String category = request.getParameter("category");
-%>
 	
 	<table class="table text-center">
 		<thead>
@@ -152,6 +146,8 @@
 			</tr>
 		</thead>
 		<%
+	String category = request.getParameter("category");
+		
 		for (Map<String, String> item : list) {
 			// 카테고리가 null일 때 (전체) 또는 카테고리명이 일치할 때
 			if (category == null || item.get("category").equals(category)) {
