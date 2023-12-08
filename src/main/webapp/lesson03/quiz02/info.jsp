@@ -3,6 +3,7 @@
 	pageEncoding="UTF-8"%>
 	
 <%
+
 // 아티스트 정보 
 
     Map<String, Object> artistInfo = new HashMap<>();
@@ -83,44 +84,66 @@
 %>
 
 <%
-	//request 
+	// 상세 정보(곡 정보)를 보여줄 타겟 세팅
+	Map<String, Object> target = null;
+
+	//1번째 방식: 목록에서 클릭한 경우(id값)
+	if (request.getParameter("id") != null) {
+		int id = Integer.valueOf(request.getParameter("id"));
+		//out.print(id);
+
+		for (Map<String, Object> music : musicList) {
+			if ((int)music.get("id") == id) {
+				target = music;
+				break;
+			}
+		}
+	}
+	
+	
+	
+	//2번째 방식: 상단에서 폼태그로 검색한 경우(search 값)
+	if (request.getParameter("search") != null) {
+		String search = (request.getParameter("search"));
+		
+		for (Map<String, Object> music : musicList) {
+			if (music.get("title").equals(search)) {
+				target = music;
+				break;
+			}
+ 		}
+	}
+	
+	//out.print(target); 맵 정보 출력
 %>
 	
 <%-- 곡 정보 --%>
-<h4>곡 목록</h4>
+<h4>곡 정보</h4>
 <div class="d-flex border border-success p-3 mb-3">
 	<div class="mr-4">
-		<img src="<%=musicInfo.get("thumbnail")%>" alt="가수 이미지" width="150">
+		<img src="<%=target.get("thumbnail")%>" alt="가수 이미지" width="150">
 	</div>	
 	<div>
-		<h3><%=musicInfo.get("title")%></h3>
-		<div class="font-weight-bold text-success"><%=musicInfo.get("singer")%></div>
-		<div>
+		<div class="display-4"><%=target.get("title")%></div>
+		<div class="font-weight-bold text-success"><%=target.get("singer")%></div>
+	<div class="music-info d-flex mt-2">	
+			<div class="mr-3">
+				<div>앨범</div>
+				<div>재생시간</div>
+				<div>작곡가</div>
+				<div>작사가</div>
+			</div>
 			<div>
-				<div class="d-flex">
-					<div class="mr-5">앨범</div>
-					<div><%= musicInfo.get("album") %></div>
-				</div>
-				<div class="d-flex">
-					<div class="mr-5">재생시간</div>
-					<div><%= musicInfo.get("time") %></div>
-				</div>
-				<div class="d-flex">
-					<div class="mr-5">작곡가</div>
-					<div><%= musicInfo.get("composer") %></div>
-				</div>
-				<div class="d-flex">
-					<div class="mr-5">작사가</div>
-					<div><%= musicInfo.get("lyricist") %></div>
-				</div>
+				<div><%= target.get("album") %></div>
+				<div><%= (int)target.get("time") / 60 %>: <%= (int)target.get("time") % 60 %></div>
+				<div><%= target.get("composer") %></div>
+				<div><%= target.get("lyricist") %></div>
 			</div>
 		</div>
-	</div>
+	</div>	
 </div>	
 
 <%-- 가사 정보 영역 --%>
-<div>
-	<h4>가사</h4>
-	<hr>
-	가사 정보 없음
-</div>
+<h4>가사</h4>
+<hr>
+가사 정보 없음
