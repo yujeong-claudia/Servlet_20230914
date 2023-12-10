@@ -121,12 +121,14 @@
 <h4>곡 정보</h4>
 <div class="d-flex border border-success p-3 mb-3">
 	<div class="mr-4">
-		<img src="<%=target.get("thumbnail")%>" alt="가수 이미지" width="150">
+		<img
+			src="<%= target.get("thumbnail") %>"
+			alt="가수이미지" width="150">
 	</div>	
 	<div>
 		<div class="display-4"><%=target.get("title")%></div>
 		<div class="font-weight-bold text-success"><%=target.get("singer")%></div>
-	<div class="music-info d-flex mt-2">	
+		<div class="music-info d-flex mt-2">	
 			<div class="mr-3">
 				<div>앨범</div>
 				<div>재생시간</div>
@@ -135,7 +137,7 @@
 			</div>
 			<div>
 				<div><%= target.get("album") %></div>
-				<div><%= (int)target.get("time") / 60 %>: <%= (int)target.get("time") % 60 %></div>
+				<div><%= (int)target.get("time") / 60 %> : <%= (int)target.get("time") % 60 %></div>
 				<div><%= target.get("composer") %></div>
 				<div><%= target.get("lyricist") %></div>
 			</div>

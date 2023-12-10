@@ -37,7 +37,7 @@ public class MysqlService {
 			// 2. DB Connection
 			conn = DriverManager.getConnection(url, id, password);
 			
-			// 3. 쿼러 실행 준비 => statement
+			// 3. 쿼리 실행 준비 => statement
 			statement = conn.createStatement();
 			
 		} catch (SQLException e) {

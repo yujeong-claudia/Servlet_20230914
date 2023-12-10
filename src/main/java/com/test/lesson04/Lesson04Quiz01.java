@@ -26,9 +26,9 @@ public class Lesson04Quiz01 extends HttpServlet{
 		ms.connect(); // 실질적인 연결코드. (꼭 넣어야함!!!!!!!)
 	
 		// DB 인서트
-		String insertQuery = "insert into `real_estate`\r\n"
-				+ "(`realtorId`, `address`, `area`, `type`, `price`, `rentPrice`)\r\n"
-				+ "values\r\n"
+		String insertQuery = "insert into `real_estate`"
+				+ "(`realtorId`, `address`, `area`, `type`, `price`, `rentPrice`)"
+				+ "values"
 				+ "(3, '헤라펠리스 101동 5305호', 350, '매매', 1500000, null)";
 		
 		try {
@@ -39,11 +39,10 @@ public class Lesson04Quiz01 extends HttpServlet{
 		
 		// DB 셀렉트 & 출력
 		PrintWriter out = response.getWriter();
-		String selectQuery = "select `address`, `area`, `type` from `real_estate` \r\n"
-				+ "order by `id` desc \r\n"
+		String selectQuery = "select `address`, `area`, `type` from `real_estate`"
+				+ "order by `id` desc"
 				+ "limit 10;";
 		try {
-			ms.select(selectQuery);
 			ResultSet res = ms.select(selectQuery);
 			while (res.next()) {
 				String address = res.getString("address");
