@@ -35,10 +35,10 @@
 	<div class="container font-weight-bold">
 		<h1>즐겨찾기 추가</h1>
 		<form method="post" action="/lesson04/quiz01_insert">
-			<label for="siteName">사이트명:</label>
-			<input type="text" class="form-control col-3 mb-3" id="siteName">
-			<label for="siteAddress">사이트 주소:</label>
-			<input type="text" class="form-control col-7" id="siteAddress">
+			<label for="name">사이트명:</label>
+			<input type="text" class="form-control col-3 mb-3" id="name" name="name">
+			<label for="address">사이트 주소:</label>
+			<input type="text" class="form-control col-7" id="address" name="address">
 			
 			<input type="submit" value="추가" class="btn btn-success mt-3">	
 		</form>

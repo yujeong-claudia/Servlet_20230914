@@ -1,4 +1,4 @@
-package com.test.lesson04;
+ package com.test.lesson04;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -26,12 +26,9 @@ public class InsertQuiz01 extends HttpServlet {
 		
 		// DB Insert 쿼리수행
 		String insertQuery="insert into `bookmark`"
-				+ "(`name`, `address`, `createdAt`, `updatedAt`)"
+	 			+ "(`name`, `address`)"
 				+ "values"
-				+ "('마론달', 'http://marondal.com', now(), now()),"
-				+ "('구글', 'https://google.com', now(), now()),"
-				+ "('네이버', 'https://naver.com', now(), now()),"
-				+ "('다음', 'https://daum.net', now(), now());";
+				+ "('" + name + "', '" + address + "')";
 		try {
 			ms.update(insertQuery);
 		} catch (SQLException e) {
@@ -42,7 +39,7 @@ public class InsertQuiz01 extends HttpServlet {
 		ms.disconnect();
 		
 		// 사용자 목록 화면으로 이동 => Redirect 302번호로 내려오게 됨
-		response.sendRedirect("/lesson04/quiz01/quiz01_1.jsp"); //예외처리 위로 던진다.
+		response.sendRedirect("/lesson04/quiz01/quiz01.jsp"); //예외처리 위로 던진다.
 		
 	}
 }

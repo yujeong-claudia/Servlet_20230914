@@ -30,11 +30,11 @@ public class DeleteQuiz01 extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+		 
 		// DB 연결해제
 		ms.disconnect();
 		
-		// 유저 목록화면으로 302 redirect => 200ok
-		response.sendRedirect("/lesson04/quiz01/quiz01_1.jsp");
+		// 출력 화면으로 302 redirect => 200ok
+		response.sendRedirect("/lesson04/quiz01/quiz01.jsp");
 	}
 }
