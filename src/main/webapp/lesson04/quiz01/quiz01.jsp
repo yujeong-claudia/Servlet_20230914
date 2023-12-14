@@ -28,12 +28,13 @@
 		ms.connect();
 		
 		// select DB
-		String query = "select `id`, `name`, `address` from `bookmark` order by `id` desc;";
+		String query = "select `id`, `name`, `address` from `bookmark` order by `id` desc";
+		// 실행은 되었으나 콘솔에서 쿼리문 에러가 생겼다. desc뒤에 붙어있는 ;를 제거하니 에러가 사라졌다.
 		// ResultSet도 import
 		ResultSet result = ms.select(query);
 %>
 	<div class="container">
-		<form method="post" action="/lesson04/quiz01_insert">
+			<h1 class="text-center">즐겨찾기 목록</h1>
 			<table class="table text-center">
 				<thead>
 					<tr>
@@ -56,7 +57,10 @@
 				%>
 				</tbody>
 			</table>
-		</form>
 	</div>
+<%
+	//db 연결 해제
+	ms.disconnect();
+%>	
 </body>
 </html>

@@ -16,7 +16,7 @@ public class DeleteQuiz01 extends HttpServlet {
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
-		// request parameter 가 id인 것을 받아온다
+		// request parameter 가 id인 것을 받아온다.
 		int id = Integer.valueOf(request.getParameter("id"));
 				
 		// DB 연결

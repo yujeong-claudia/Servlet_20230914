@@ -21,7 +21,7 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
-	<% 
+	<% 	
 		// DB 연결
 		// import해줘야함
 		MysqlService ms = MysqlService.getInstance();

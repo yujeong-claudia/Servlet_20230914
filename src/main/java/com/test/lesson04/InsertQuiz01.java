@@ -22,7 +22,7 @@ public class InsertQuiz01 extends HttpServlet {
 		
 		// DB 연결
 		MysqlService ms = MysqlService.getInstance(); //객체일뿐
-		ms.connect(); // 연결을 따로 해줘야함, 실질적인 DB연결, 꼭 있어
+		ms.connect(); // 연결을 따로 해줘야함, 실질적인 DB연결, 꼭 있어야한다.
 		
 		// DB Insert 쿼리수행
 		String insertQuery="insert into `bookmark`"
